@@ -3,7 +3,6 @@ function getRopeLength(fieldDiameter, eatenRatio) {
   if (fieldDiameter === 0 || eatenRatio === 0) return 0
 
   let fieldRadius = fieldDiameter / 2
-  let ropeLength = 1
   let area = 0
   let fieldArea = Math.PI * Math.pow(fieldRadius, 2)
 
