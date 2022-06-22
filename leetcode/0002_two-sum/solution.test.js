@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { twoSum } from './index'
+import { twoSum } from './solution'
 
 describe('twoSum', () => {
   it('returns correct results', () => {

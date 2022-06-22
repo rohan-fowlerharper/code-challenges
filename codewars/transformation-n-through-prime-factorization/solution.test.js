@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { f } from './index.js'
+import { f } from './solution.js'
 
 describe('Transformation of a Number Through Prime Factorization', () => {
   it('returns correct results', () => {

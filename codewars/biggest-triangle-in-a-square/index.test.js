@@ -61,8 +61,8 @@ describe('Static Cases', function () {
     ]
     var sphere_center2 = [0, 0, 0]
     var radius2 = 8
-    let res = biggestTriangInt(points_list2, sphere_center2, radius2)
-    let result = [
+    res = biggestTriangInt(points_list2, sphere_center2, radius2)
+    result = [
       165,
       33.645207682521445,
       [
