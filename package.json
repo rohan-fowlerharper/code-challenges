@@ -19,6 +19,7 @@
   "homepage": "https://github.com/rohan-fowlerharper/code-challenges#readme",
   "devDependencies": {
     "@vitest/ui": "^0.16.0",
+    "ts-node": "^10.8.1",
     "vitest": "^0.15.2"
   }
 }
