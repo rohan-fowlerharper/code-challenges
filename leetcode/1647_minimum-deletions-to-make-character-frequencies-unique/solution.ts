@@ -6,11 +6,7 @@ export function minDeletions(s: string): number {
   let count = 0
 
   for (let i = 0; i < s.length; i++) {
-    if (frequencies.has(s[i])) {
-      frequencies.set(s[i], (frequencies.get(s[i]) || 0) + 1)
-    } else {
-      frequencies.set(s[i], 1)
-    }
+    frequencies.set(s[i], (frequencies.get(s[i]) || 0) + 1)
   }
 
   for (let [_, frequency] of frequencies) {
