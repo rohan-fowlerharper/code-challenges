@@ -7,32 +7,35 @@ function floodFill(
   const currentColor = image[sr][sc]
   if (currentColor === color) return image
 
-  fill(image, sr, sc, color, currentColor)
+  const seen = new Set<[number, number]>()
+  const vectors = [
+    [0, 1],
+    [1, 0],
+    [0, -1],
+    [-1, 0],
+  ]
+  function fill(sr: number, sc: number) {
+    if (seen.has([sr, sc])) return
 
-  return image
-}
+    if (
+      sr < 0 ||
+      sc < 0 ||
+      sr > image.length - 1 ||
+      sc > image[sr].length - 1 ||
+      image[sr][sc] !== currentColor
+    ) {
+      return
+    }
 
-function fill(
-  image: number[][],
-  sr: number,
-  sc: number,
-  color: number,
-  currentColor: number
-) {
-  if (
-    sr < 0 ||
-    sc < 0 ||
-    sr > image.length - 1 ||
-    sc > image[sr].length - 1 ||
-    image[sr][sc] !== currentColor
-  ) {
-    return
+    seen.add([sr, sc])
+    image[sr][sc] = color
+
+    for (let [x, y] of vectors) {
+      fill(sr + x, sc + y)
+    }
   }
 
-  image[sr][sc] = color
+  fill(sr, sc)
 
-  fill(image, sr + 1, sc, color, currentColor)
-  fill(image, sr - 1, sc, color, currentColor)
-  fill(image, sr, sc + 1, color, currentColor)
-  fill(image, sr, sc - 1, color, currentColor)
+  return image
 }
